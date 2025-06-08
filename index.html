@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Prediction & Autocorrect | Soha Farhana</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="header">
+        <div class="logo">
+            <h2 class="gradient-text">Word Predictor</h2>
+        </div>
+        <nav>
+            <a href="#demo">Demo</a>
+            <a href="#about">About</a>
+            <a href="#algorithm">Algorithm</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </div>
+
+    <!-- Theme switch -->
+    <div class="theme-switch-wrapper">
+        <label class="theme-switch" for="theme-switch">
+            <input type="checkbox" id="theme-switch" />
+            <span class="slider"></span>
+        </label>
+    </div>
+
+    <main class="main-container">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <span class="greeting-text">Welcome! 👋</span>
+                    <h1 class="gradient-text">Intelligent Word Prediction</h1>
+                    <p class="subtitle">Advanced Autocorrect System using Natural Language Processing</p>
+                    <p class="description">
+                        Experience the power of machine learning in text prediction and correction. 
+                        This system uses frequency analysis and similarity algorithms to suggest the most relevant words.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#demo" class="cta-button primary">Try Demo</a>
+                        <a href="#algorithm" class="cta-button secondary">Learn More</a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="feature-card">
+                        <div class="feature-icon">🔤</div>
+                        <h3>Text Analysis</h3>
+                        <p>Analyzes word frequency patterns</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🎯</div>
+                        <h3>Smart Correction</h3>
+                        <p>Intelligent autocorrect suggestions</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">⚡</div>
+                        <h3>Fast Processing</h3>
+                        <p>Real-time word prediction</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Demo Section -->
+        <section id="demo" class="demo-section">
+            <div class="container">
+                <h2 class="section-title gradient-text">Interactive Demo</h2>
+                <div class="demo-container">
+                    <div class="input-section">
+                        <div class="input-group">
+                            <label for="word-input">Enter a word to get suggestions:</label>
+                            <input type="text" id="word-input" placeholder="Type a word (e.g., 'hel', 'mov', 'progam')" />
+                            <button id="predict-btn" class="predict-button">Get Predictions</button>
+                        </div>
+                        <div class="examples">
+                            <span class="example-label">Try these examples:</span>
+                            <button class="example-word" data-word="hel">hel</button>
+                            <button class="example-word" data-word="mov">mov</button>
+                            <button class="example-word" data-word="progam">progam</button>
+                            <button class="example-word" data-word="machne">machne</button>
+                        </div>
+                    </div>
+                    <div class="results-section">
+                        <div id="loading" class="loading hidden">
+                            <div class="spinner"></div>
+                            <p>Analyzing word patterns...</p>
+                        </div>
+                        <div id="results" class="results-container">
+                            <h3>Word Predictions</h3>
+                            <p class="results-placeholder">Enter a word above to see intelligent predictions and corrections.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about-section">
+            <div class="container">
+                <h2 class="section-title gradient-text">About This Project</h2>
+                <div class="about-grid">
+                    <div class="about-card">
+                        <div class="about-icon">📊</div>
+                        <h3>Frequency Analysis</h3>
+                        <p>Analyzes word frequency from text data to understand common word patterns and usage statistics.</p>
+                    </div>
+                    <div class="about-card">
+                        <div class="about-icon">🧮</div>
+                        <h3>Similarity Calculation</h3>
+                        <p>Uses Jaccard distance to measure similarity between words and find the closest matches.</p>
+                    </div>
+                    <div class="about-card">
+                        <div class="about-icon">🎲</div>
+                        <h3>Probability Scoring</h3>
+                        <p>Calculates relative frequency probabilities to rank word suggestions by likelihood.</p>
+                    </div>
+                    <div class="about-card">
+                        <div class="about-icon">🔍</div>
+                        <h3>Smart Ranking</h3>
+                        <p>Combines similarity and probability scores to provide the most relevant word suggestions.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Algorithm Section -->
+        <section id="algorithm" class="algorithm-section">
+            <div class="container">
+                <h2 class="section-title gradient-text">How It Works</h2>
+                <div class="algorithm-steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3>Text Processing</h3>
+                            <p>The system reads text data, converts it to lowercase, and extracts individual words using regular expressions.</p>
+                            <div class="code-snippet">
+                                <code>words = re.findall('\w+', data.lower())</code>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3>Frequency Analysis</h3>
+                            <p>Creates a frequency dictionary using Counter to track how often each word appears in the dataset.</p>
+                            <div class="code-snippet">
+                                <code>word_freq_dict = Counter(words)</code>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3>Probability Calculation</h3>
+                            <p>Calculates relative frequency probabilities for each word based on total word count.</p>
+                            <div class="code-snippet">
+                                <code>prob = freq[word] / total_words</code>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h3>Similarity Matching</h3>
+                            <p>Uses Jaccard distance with 2-grams to find words similar to the input and ranks them by probability.</p>
+                            <div class="code-snippet">
+                                <code>similarity = 1 - jaccard_distance(word1, word2)</code>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technologies Used -->
+        <section class="tech-section">
+            <div class="container">
+                <h2 class="section-title gradient-text">Technologies Used</h2>
+                <div class="tech-grid">
+                    <div class="tech-item">
+                        <div class="tech-icon">🐍</div>
+                        <span>Python</span>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-icon">📊</div>
+                        <span>Pandas</span>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-icon">🔢</div>
+                        <span>NumPy</span>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-icon">📏</div>
+                        <span>TextDistance</span>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-icon">🔤</div>
+                        <span>RegEx</span>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-icon">📚</div>
+                        <span>Collections</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <h2 class="section-title gradient-text">Get In Touch</h2>
+                <p class="contact-description">
+                    Interested in this project or want to collaborate? Feel free to reach out!
+                </p>
+                <div class="contact-links">
+                    <a href="https://github.com/SohaFarhana05" class="contact-link github" target="_blank">
+                        <div class="contact-icon">💻</div>
+                        <span>GitHub</span>
+                    </a>
+                    <a href="https://www.linkedin.com/messaging/compose/?to=SohaFarhana" class="contact-link linkedin" target="_blank">
+                        <div class="contact-icon">💼</div>
+                        <span>LinkedIn</span>
+                    </a>
+                    <a href="mailto:sohafarhana@gmail.com" class="contact-link email">
+                        <div class="contact-icon">📧</div>
+                        <span>Email</span>
+                    </a>
+                    <a href="https://sohafarhana05.github.io/Portfolio/" class="contact-link portfolio" target="_blank">
+                        <div class="contact-icon">🌐</div>
+                        <span>Portfolio</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Soha Farhana. Built with ❤️ for intelligent text processing.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
